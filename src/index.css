@@ -134,3 +134,79 @@ body {
     animation-delay: 600ms;
   }
 }
+
+/* WhatsApp Toggle Animations */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-subtle {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 0 12px rgba(34, 197, 94, 0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.3s ease-out;
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2s infinite;
+}
+
+/* Logo Hover Effects */
+.logo-hover-container {
+  position: relative;
+}
+
+.logo-hover-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s ease;
+}
+
+.logo-hover-container:hover::before {
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* WhatsApp Toggle Button additional styling */
+.whatsapp-toggle-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.whatsapp-toggle-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+  border-radius: inherit;
+}
+
+.whatsapp-popup {
+  transform-origin: bottom right;
+}

@@ -6,6 +6,7 @@ import Services from './components/Services';
 import BikeFleet from './components/BikeFleet';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import WhatsAppToggle from './components/WhatsAppToggle';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <About />
       <Contact />
       <Footer />
+      <WhatsAppToggle />
     </div>
   );
 }
