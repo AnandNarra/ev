@@ -50,9 +50,9 @@ const Services = () => {
     ];
 
     return (
-        <section id="services" className="section-padding bg-white">
+        <section id="services" className="py-12 bg-white">
             <div className="container-custom">
-                <div className="text-center mb-16">
+                <div className="text-center mb-12">
                     <span className="inline-block px-4 py-2 bg-accent-100 text-accent-700 rounded-full font-semibold text-sm mb-4">
                         Our Services
                     </span>

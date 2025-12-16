@@ -5,6 +5,7 @@ import { FaBars, FaTimes, FaWhatsapp } from 'react-icons/fa';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [activeSection, setActiveSection] = useState('home');
     const navigate = useNavigate();
     const location = useLocation();
 
@@ -15,6 +16,31 @@ const Navbar = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    // Scroll spy to detect active section
+    useEffect(() => {
+        const handleScrollSpy = () => {
+            const sections = ['home', 'bike-preview', 'services', 'about', 'reviews', 'contact'];
+            const scrollPosition = window.scrollY + 100;
+
+            for (const sectionId of sections) {
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    const { offsetTop, offsetHeight } = element;
+                    if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+                        setActiveSection(sectionId);
+                        break;
+                    }
+                }
+            }
+        };
+
+        if (location.pathname === '/') {
+            window.addEventListener('scroll', handleScrollSpy);
+            handleScrollSpy(); // Initial check
+            return () => window.removeEventListener('scroll', handleScrollSpy);
+        }
+    }, [location.pathname]);
 
     const scrollToSection = (id) => {
         if (location.pathname !== '/') {
@@ -34,9 +60,9 @@ const Navbar = () => {
         setIsOpen(false);
     };
 
-    const whatsappNumber = '7032160046';
-    const whatsappMessage = encodeURIComponent('Hi! I would like to rent a bike. Can you please help me with the details?');
-    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+    const isActive = (sectionId) => {
+        return location.pathname === '/' && activeSection === sectionId;
+    };
 
     return (
         <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg py-3' : 'bg-white/95 backdrop-blur-sm py-4'
@@ -53,7 +79,10 @@ const Navbar = () => {
                     </Link>
                     {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-8">
-                        <button onClick={() => scrollToSection('home')} className="text-gray-700 hover:text-primary-600 font-semibold transition-colors duration-200">
+                        <button
+                            onClick={() => scrollToSection('home')}
+                            className={`font-semibold transition-colors duration-200 ${isActive('home') ? 'text-primary-600 font-bold' : 'text-gray-700 hover:text-primary-600'}`}
+                        >
                             Home
                         </button>
                         <Link to="/bikes" className="text-gray-700 hover:text-primary-600 font-semibold transition-colors duration-200">
@@ -62,19 +91,24 @@ const Navbar = () => {
                         <Link to="/attractions" className="text-gray-700 hover:text-primary-600 font-semibold transition-colors duration-200">
                             Attractions
                         </Link>
-                        <button onClick={() => scrollToSection('services')} className="text-gray-700 hover:text-primary-600 font-semibold transition-colors duration-200">
+                        <button
+                            onClick={() => scrollToSection('services')}
+                            className={`font-semibold transition-colors duration-200 ${isActive('services') ? 'text-primary-600 font-bold' : 'text-gray-700 hover:text-primary-600'}`}
+                        >
                             Services
                         </button>
-                        <button onClick={() => scrollToSection('about')} className="text-gray-700 hover:text-primary-600 font-semibold transition-colors duration-200">
+                        <button
+                            onClick={() => scrollToSection('about')}
+                            className={`font-semibold transition-colors duration-200 ${isActive('about') ? 'text-primary-600 font-bold' : 'text-gray-700 hover:text-primary-600'}`}
+                        >
                             About
                         </button>
-                        <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-primary-600 font-semibold transition-colors duration-200">
+                        <button
+                            onClick={() => scrollToSection('contact')}
+                            className={`font-semibold transition-colors duration-200 ${isActive('contact') ? 'text-primary-600 font-bold' : 'text-gray-700 hover:text-primary-600'}`}
+                        >
                             Contact
                         </button>
-                        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 btn-primary">
-                            <FaWhatsapp className="text-xl" />
-                            <span>Book Now</span>
-                        </a>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -108,10 +142,6 @@ const Navbar = () => {
                             <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-primary-600 font-semibold text-left transition-colors duration-200">
                                 Contact
                             </button>
-                            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-primary justify-center">
-                                <FaWhatsapp className="text-xl mr-2" />
-                                Book Now
-                            </a>
                         </div>
                     </div>
                 )}

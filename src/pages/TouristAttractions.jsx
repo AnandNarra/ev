@@ -6,25 +6,25 @@ const TouristAttractions = () => {
         {
             name: 'Tirumala Tirupati Devasthanams',
             description: 'World-famous temple of Lord Venkateswara, one of the richest and most visited pilgrimage sites in the world.',
-            distance: '65 km from Chittoor',
+            distance: '90 km from Chittoor',
             image: '/images/tirupati-temple.jpg'
         },
         {
             name: 'Kanipakam Vinayaka Temple',
             description: 'Ancient Ganesha temple known for its self-manifested idol that continuously grows in size.',
-            distance: '35 km from Chittoor',
+            distance: '12 km from Chittoor',
             image: '/images/kanipakam.jpg'
         },
         {
             name: 'Ardhagiri Anjaneya Swamy Temple',
             description: 'Temple dedicated to Lord Hanuman, situated on a hilltop offering panoramic views of the surroundings.',
-            distance: '8 km from Chittoor',
+            distance: '25 km from Chittoor',
             image: '/images/anjaneya-temple.jpg'
         },
         {
             name: 'Golden Temple Vellore',
             description: 'Magnificent temple dedicated to Goddess Lakshmi, known for its stunning golden architecture and intricate carvings.',
-            distance: '75 km from Chittoor',
+            distance: '45 km from Chittoor',
             image: '/images/golden-temple.jpg'
         },
         {
@@ -51,19 +51,19 @@ const TouristAttractions = () => {
         {
             name: 'Thalakona Waterfalls',
             description: 'Highest waterfall in Andhra Pradesh, surrounded by dense forest and natural beauty, ideal for nature lovers.',
-            distance: '50 km from Chittoor',
+            distance: '100 km from Chittoor',
             image: '/images/thalakona.jpg'
         },
         {
             name: 'Mamandur Waterfalls',
             description: 'Serene waterfall nestled in lush greenery, perfect for picnics and photography.',
-            distance: '40 km from Chittoor',
+            distance: '95 km from Chittoor',
             image: '/images/mamandur.jpg'
         },
         {
             name: 'Kaigal Waterfalls',
-            description: 'Picturesque waterfall with crystal clear water, surrounded by scenic hills and forest trails.',
-            distance: '55 km from Chittoor',
+            description: 'Picturesque waterfall with crystal clear water, surrounded by scenic hills and forest trails. (75 km from CTR)',
+            distance: '75 km from Chittoor',
             image: '/images/kaigal.jpg'
         },
         {

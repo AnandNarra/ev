@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaWhatsapp, FaRoad } from 'react-icons/fa';
+import { FaWhatsapp, FaRoad, FaPhone } from 'react-icons/fa';
 import BookingModal from './BookingModal';
 
 const AllVehicles = () => {
@@ -10,6 +10,8 @@ const AllVehicles = () => {
         setSelectedBike(bikeName);
         setIsModalOpen(true);
     };
+
+    const phoneNumber = '7032160046';
 
     const bikes = [
         {
@@ -189,14 +191,23 @@ const AllVehicles = () => {
                                     </div>
                                 </div>
 
-                                {/* Book Button */}
-                                <button
-                                    onClick={() => handleBookClick(bike.name)}
-                                    className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center"
-                                >
-                                    <FaWhatsapp className="text-xl mr-2" />
-                                    Book This Bike
-                                </button>
+                                {/* Action Buttons */}
+                                <div className="grid grid-cols-2 gap-2">
+                                    <button
+                                        onClick={() => handleBookClick(bike.name)}
+                                        className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-3 rounded-lg transition-all duration-300 flex items-center justify-center"
+                                    >
+                                        <FaWhatsapp className="text-xl mr-1" />
+                                        <span className="text-sm">WhatsApp</span>
+                                    </button>
+                                    <a
+                                        href={`tel:${phoneNumber}`}
+                                        className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-3 rounded-lg transition-all duration-300 flex items-center justify-center"
+                                    >
+                                        <FaPhone className="text-lg mr-1" />
+                                        <span className="text-sm">Call Now</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     ))}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaTimes, FaWhatsapp, FaCalendarAlt, FaClock, FaMapMarkerAlt, FaCheckCircle } from 'react-icons/fa';
+import { FaTimes, FaWhatsapp, FaCalendarAlt, FaClock, FaMapMarkerAlt, FaCheckCircle, FaPhone } from 'react-icons/fa';
 
 const BookingModal = ({ isOpen, onClose, bikeName }) => {
     const [pickupDate, setPickupDate] = useState('');
@@ -280,14 +280,23 @@ const BookingModal = ({ isOpen, onClose, bikeName }) => {
                         </>
                     )}
 
-                    {/* Book Now Button */}
-                    <button
-                        onClick={handleBookNow}
-                        className={`w-full btn-primary justify-center py-4 text-lg ${!acceptedTerms && showTerms ? 'opacity-50 cursor-not-allowed' : ''}`}
-                    >
-                        <FaWhatsapp className="text-2xl mr-3" />
-                        {showTerms ? 'Confirm & Book on WhatsApp' : 'Book Now'}
-                    </button>
+                    {/* Action Buttons */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <button
+                            onClick={handleBookNow}
+                            className={`btn-primary justify-center py-4 text-base sm:text-lg ${!acceptedTerms && showTerms ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        >
+                            <FaWhatsapp className="text-xl sm:text-2xl mr-2 sm:mr-3" />
+                            <span className="whitespace-nowrap">{showTerms ? 'Book on WhatsApp' : 'Book Now'}</span>
+                        </button>
+                        <a
+                            href="tel:7032160046"
+                            className="inline-flex items-center justify-center py-4 px-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl text-base sm:text-lg"
+                        >
+                            <FaPhone className="text-lg sm:text-xl mr-2 sm:mr-3" />
+                            <span className="whitespace-nowrap">Call Us Now</span>
+                        </a>
+                    </div>
 
                     {showTerms && (
                         <button
