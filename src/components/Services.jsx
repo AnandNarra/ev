@@ -20,7 +20,7 @@ const Services = () => {
             features: ['Doorstep delivery', 'Within 3kms radius', 'Convenient pickup']
         },
         {
-            icon: <GiFullMotorcycleHelmet className="text-5xl" />,
+            icon: <MdSecurity className="text-5xl" />,
             title: 'Free helmet provided',
             description: 'Safety is our priority. Get a clean, sanitized helmet with every rental.',
             gradient: 'from-orange-500 to-red-600',

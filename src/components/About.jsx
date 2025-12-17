@@ -37,7 +37,7 @@ const About = () => {
                         <span className="gradient-text"> Self-Driving Bike Rentals</span>
                     </h2>
                     <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        At Rent A Ride, we provide premium self-driving bike rentals in Hyderabad.
+                        At Rent A Ride, we provide premium self-driving bike rentals in  Chittoor.
                         Whether you're commuting, exploring, or just need a ride for the day,
                         we've got the perfect bike for you.
                     </p>

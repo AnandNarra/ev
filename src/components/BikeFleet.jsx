@@ -19,6 +19,7 @@ const BikeFleet = () => {
             kmRange: 100,
             price: 499,
             extraKm: 3,
+            extraHour: 50,
             category: 'Scooter',
             color: 'Black',
             features: ['BS6 Engine', 'Fuel Efficient', 'Easy to Ride']
@@ -30,6 +31,7 @@ const BikeFleet = () => {
             kmRange: 100,
             price: 499,
             extraKm: 3,
+            extraHour: 50,
             category: 'Scooter',
             color: 'Cement',
             features: ['125cc Engine', 'Comfortable Ride', 'Spacious Storage']
@@ -41,9 +43,23 @@ const BikeFleet = () => {
             kmRange: 100,
             price: 499,
             extraKm: 3,
+            extraHour: 50,
             category: 'Commuter',
             color: 'Black and Grey',
             features: ['Fuel Efficient', 'Reliable', 'Low Maintenance']
+        },
+        {
+            name: 'Royal Enfield Classic 350',
+            variant: 'Stealth Black',
+            image: '/images/royal-enfield.png',
+            kmRange: 120,
+            price: 999,
+            extraKm: 4,
+            extraHour: 70,
+            category: 'Cruiser',
+            color: 'Stealth Black',
+            features: ['Classic Design', 'Powerful Engine', 'Long Range'],
+            isPremium: true
         },
         {
             name: 'Ather Rizta',
@@ -52,6 +68,7 @@ const BikeFleet = () => {
             kmRange: 80,
             price: 599,
             extraKm: 3,
+            extraHour: 50,
             category: 'Electric Scooter',
             color: 'Violet',
             features: ['Electric', 'Fast Charging', 'Smart Features'],
@@ -64,6 +81,7 @@ const BikeFleet = () => {
             kmRange: 120,
             price: 899,
             extraKm: 4,
+            extraHour: 70,
             category: 'Sport Bike',
             color: 'Black',
             features: ['155cc Engine', 'Racing Style', 'High Performance'],
@@ -76,6 +94,7 @@ const BikeFleet = () => {
             kmRange: 130,
             price: 1099,
             extraKm: 4,
+            extraHour: 70,
             category: 'Adventure Bike',
             color: 'Black',
             features: ['411cc Engine', 'Off-Road Ready', 'Long Distance'],
@@ -173,13 +192,15 @@ const BikeFleet = () => {
                                 <div className="bg-gray-50 rounded-lg p-3 mb-3">
                                     <h4 className="text-xs font-bold text-gray-700 mb-2">Extras</h4>
                                     <div className="space-y-1">
-                                        <div className="flex justify-between items-center text-xs">
-                                            <span className="text-gray-600">Extra km charge:</span>
-                                            <span className="font-semibold text-gray-900">₹{bike.extraKm}/km</span>
-                                        </div>
+                                        {!bike.isElectric && (
+                                            <div className="flex justify-between items-center text-xs">
+                                                <span className="text-gray-600">Extra km charge:</span>
+                                                <span className="font-semibold text-gray-900">₹{bike.extraKm}/km</span>
+                                            </div>
+                                        )}
                                         <div className="flex justify-between items-center text-xs">
                                             <span className="text-gray-600">Extra hour charge:</span>
-                                            <span className="font-semibold text-gray-900">₹50/hr</span>
+                                            <span className="font-semibold text-gray-900">₹{bike.extraHour}/hr</span>
                                         </div>
                                     </div>
                                 </div>

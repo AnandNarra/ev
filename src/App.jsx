@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import WhatsAppToggle from './components/WhatsAppToggle';
+import PromoPopup from './components/PromoPopup';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import BikesPage from './pages/BikesPage';
@@ -20,6 +21,7 @@ function App() {
       </Routes>
       <Footer />
       <WhatsAppToggle />
+      <PromoPopup />
     </div>
   );
 }

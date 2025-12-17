@@ -12,7 +12,7 @@ const BikePreview = () => {
         setIsModalOpen(true);
     };
 
-    // Only show first 3 bikes
+    // Only show first 4 bikes
     const bikes = [
         {
             name: 'Honda Activa BS6',
@@ -21,6 +21,7 @@ const BikePreview = () => {
             kmRange: 100,
             price: 499,
             extraKm: 3,
+            extraHour: 50,
             category: 'Scooter',
             features: ['BS6 Engine', 'Fuel Efficient', 'Easy to Ride']
         },
@@ -31,6 +32,7 @@ const BikePreview = () => {
             kmRange: 100,
             price: 499,
             extraKm: 3,
+            extraHour: 50,
             category: 'Scooter',
             features: ['125cc Engine', 'Comfortable Ride', 'Spacious Storage']
         },
@@ -41,8 +43,20 @@ const BikePreview = () => {
             kmRange: 100,
             price: 499,
             extraKm: 3,
+            extraHour: 50,
             category: 'Commuter',
             features: ['Fuel Efficient', 'Reliable', 'Low Maintenance']
+        },
+        {
+            name: 'Royal Enfield Classic 350',
+            variant: 'Stealth Black',
+            image: '/images/royal-enfield.png',
+            kmRange: 120,
+            price: 999,
+            extraKm: 4,
+            extraHour: 70,
+            category: 'Cruiser',
+            features: ['Classic Design', 'Powerful Engine', 'Long Range']
         }
     ];
 
@@ -127,13 +141,15 @@ const BikePreview = () => {
                                     <div className="bg-gray-50 rounded-lg p-2.5 md:p-3 mb-3">
                                         <h4 className="text-[10px] md:text-xs font-bold text-gray-700 mb-2">Extras</h4>
                                         <div className="space-y-1">
-                                            <div className="flex justify-between items-center text-[10px] md:text-xs">
-                                                <span className="text-gray-600">Extra km charge:</span>
-                                                <span className="font-semibold text-gray-900">₹{bike.extraKm}/km</span>
-                                            </div>
+                                            {!bike.isElectric && (
+                                                <div className="flex justify-between items-center text-[10px] md:text-xs">
+                                                    <span className="text-gray-600">Extra km charge:</span>
+                                                    <span className="font-semibold text-gray-900">₹{bike.extraKm}/km</span>
+                                                </div>
+                                            )}
                                             <div className="flex justify-between items-center text-[10px] md:text-xs">
                                                 <span className="text-gray-600">Extra hour charge:</span>
-                                                <span className="font-semibold text-gray-900">₹50/hr</span>
+                                                <span className="font-semibold text-gray-900">₹{bike.extraHour}/hr</span>
                                             </div>
                                         </div>
                                     </div>

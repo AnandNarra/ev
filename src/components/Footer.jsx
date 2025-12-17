@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { FaWhatsapp, FaPhone, FaEnvelope, FaInstagram, FaMapMarkerAlt, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaWhatsapp, FaPhone, FaEnvelope, FaInstagram, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Footer = () => {
-    const [showTerms, setShowTerms] = useState(false);
     const currentYear = new Date().getFullYear();
     const navigate = useNavigate();
     const location = useLocation();
@@ -181,49 +180,41 @@ const Footer = () => {
 
                 {/* Terms and Conditions Section */}
                 <div className="border-t border-gray-700 pt-8 mb-8">
-                    <button
-                        onClick={() => setShowTerms(!showTerms)}
-                        className="flex items-center justify-between w-full text-left mb-4 hover:text-primary-400 transition-colors duration-200"
-                    >
-                        <h3 className="text-lg font-bold text-white">Terms and Conditions</h3>
-                        {showTerms ? <FaChevronUp className="text-primary-500" /> : <FaChevronDown className="text-primary-500" />}
-                    </button>
-                    {showTerms && (
-                        <div className="bg-gray-800 rounded-lg p-6 text-gray-300 text-sm space-y-4 animate-fade-in-up">
-                            <div>
-                                <h4 className="font-bold text-white mb-2">1. Rental Agreement</h4>
-                                <p>By renting a bike from Rent A Ride, you agree to comply with all terms and conditions. The renter must be at least 18 years old with a valid driving license.</p>
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-white mb-2">2. Security Deposit</h4>
-                                <p>A refundable security deposit is required at the time of booking. The deposit will be refunded upon safe return of the vehicle in the same condition.</p>
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-white mb-2">3. Usage Terms</h4>
-                                <p>The bike is provided for personal use only. Commercial use, racing, or any illegal activities are strictly prohibited. The renter is responsible for all traffic violations and fines.</p>
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-white mb-2">4. Fuel Policy</h4>
-                                <p>The bike will be provided with a full tank. Please return the bike with a full tank, or fuel charges will be deducted from your deposit.</p>
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-white mb-2">5. Damage and Liability</h4>
-                                <p>The renter is liable for any damage to the bike during the rental period. In case of accidents, the renter must inform us immediately and file a police report.</p>
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-white mb-2">6. Cancellation Policy</h4>
-                                <p>Cancellations made 24 hours before the rental start time will receive a full refund. Cancellations within 24 hours are non-refundable.</p>
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-white mb-2">7. Late Returns</h4>
-                                <p>Extra charges apply for late returns. Please contact us if you need to extend your rental period.</p>
-                            </div>
-                            <div>
-                                <h4 className="font-bold text-white mb-2">8. Insurance</h4>
-                                <p>All bikes are covered by basic insurance. However, the renter is responsible for any damages not covered by insurance.</p>
-                            </div>
+                    <h3 className="text-lg font-bold text-white mb-4">Terms and Conditions</h3>
+                    <div className="bg-gray-800 rounded-lg p-6 text-gray-300 text-sm space-y-4">
+                        <div>
+                            <h4 className="font-bold text-white mb-2">1. Rental Agreement</h4>
+                            <p>By renting a bike from Rent A Ride, you agree to comply with all terms and conditions. The renter must be at least 18 years old with a valid driving license.</p>
                         </div>
-                    )}
+                        <div>
+                            <h4 className="font-bold text-white mb-2">2. Security Deposit</h4>
+                            <p>A refundable security deposit is required at the time of booking. The deposit will be refunded upon safe return of the vehicle in the same condition.</p>
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-white mb-2">3. Usage Terms</h4>
+                            <p>The bike is provided for personal use only. Commercial use, racing, or any illegal activities are strictly prohibited. The renter is responsible for all traffic violations and fines.</p>
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-white mb-2">4. Fuel Policy</h4>
+                            <p>Fuel is provided at a certain level and customer must return the vehicle at the same fuel level.</p>
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-white mb-2">5. Damage and Liability</h4>
+                            <p>The renter is responsible for any damage to the bike during the rental period. In case of accidents, the renter must inform us immediately and file a police report.</p>
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-white mb-2">6. Cancellation Policy</h4>
+                            <p>Cancellations made 24 hours before the rental start time will receive a full refund. Cancellations within 24 hours are non-refundable.</p>
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-white mb-2">7. Late Returns</h4>
+                            <p>Extra charges apply for late returns. Please contact us if you need to extend your rental period.</p>
+                        </div>
+                        <div>
+                            <h4 className="font-bold text-white mb-2">8. Kilometer Limit</h4>
+                            <p>Each rental includes 100 kilometers within 24 hours. Additional kilometers beyond the limit will be charged at ₹3 per kilometer.</p>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Bottom Bar */}
@@ -232,14 +223,6 @@ const Footer = () => {
                         <p className="text-gray-400 text-sm text-center md:text-left">
                             © {currentYear} Rent A Ride. All rights reserved. Made with ❤️ in Chittoor.
                         </p>
-                        <div className="flex space-x-6 text-sm">
-                            <button
-                                onClick={() => setShowTerms(true)}
-                                className="text-gray-400 hover:text-white transition-colors duration-200"
-                            >
-                                Terms of Service
-                            </button>
-                        </div>
                     </div>
                 </div>
             </div>

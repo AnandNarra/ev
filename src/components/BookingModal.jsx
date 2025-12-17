@@ -270,7 +270,7 @@ const BookingModal = ({ isOpen, onClose, bikeName }) => {
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-gray-900 mb-1">Fuel Policy:</h4>
-                                        <p>Return vehicle with same fuel level or fuel charges will apply.</p>
+                                        <p>Fuel is provided at a certain level and customer must return the vehicle at the same fuel level.</p>
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-gray-900 mb-1">Delay Charges:</h4>
@@ -279,6 +279,10 @@ const BookingModal = ({ isOpen, onClose, bikeName }) => {
                                     <div>
                                         <h4 className="font-semibold text-gray-900 mb-1">Extension Policy:</h4>
                                         <p>Inform 6 hours before end of ride to extend rental.</p>
+                                    </div>
+                                    <div>
+                                        <h4 className="font-semibold text-gray-900 mb-1">Kilometer Limit:</h4>
+                                        <p>100 km included per 24 hours. Extra km charged at ₹3/km.</p>
                                     </div>
                                     <div>
                                         <h4 className="font-semibold text-gray-900 mb-1">Important Rules:</h4>

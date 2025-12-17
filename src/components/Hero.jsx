@@ -68,10 +68,14 @@ const Hero = () => {
                             </span>
                         </h1>
 
+
                         {/* Price Badge */}
-                        <div className="inline-block mb-3 md:mb-4">
-                            <span className="inline-flex items-center px-4 py-1.5 md:px-6 md:py-2 rounded-full bg-gradient-to-r from-orange-500 to-orange-600 text-white text-sm md:text-lg font-bold shadow-lg">
-                                💰 Price starts just @₹499
+                        <div className="inline-block mb-3 md:mb-4 animate-pulse-subtle">
+                            <span className="inline-flex items-center px-6 py-2.5 md:px-8 md:py-3.5 rounded-full bg-gradient-to-r from-yellow-400 via-orange-500 to-orange-600 text-white text-base md:text-xl lg:text-2xl font-extrabold shadow-2xl border-2 border-white/50 hover:scale-105 transition-transform duration-300" style={{
+                                boxShadow: '0 0 30px rgba(251, 146, 60, 0.8), 0 0 60px rgba(251, 146, 60, 0.4), 0 10px 40px rgba(0, 0, 0, 0.3)'
+                            }}>
+                                <span className="animate-bounce inline-block mr-2">💰</span>
+                                <span className="drop-shadow-lg">Price starts just @₹499</span>
                             </span>
                         </div>
 

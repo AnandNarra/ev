@@ -227,7 +227,7 @@ const Contact = () => {
                                 <div>
                                     <h4 className="font-bold text-gray-900 mb-1">Service Area</h4>
                                     <p className="text-sm text-gray-600">
-                                        We provide bike rental services across Hyderabad. Contact us for delivery locations.
+                                        We provide bike rental services across Chittoor. Contact us for delivery locations.
                                     </p>
                                 </div>
                             </div>

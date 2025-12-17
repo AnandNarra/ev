@@ -18,7 +18,7 @@ const RentalTerms = () => {
             title: 'Fuel Policy',
             gradient: 'from-accent-500 to-accent-700',
             items: [
-                'Vehicles are provided with a certain fuel level. Customers must return the vehicle with the same fuel level, or fuel charges will apply.'
+                'Fuel is provided at a certain level and customer must return the vehicle at the same fuel level.'
             ]
         },
         {
