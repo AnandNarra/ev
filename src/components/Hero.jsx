@@ -58,10 +58,10 @@ const Hero = () => {
                         </div>
 
                         <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-3 md:mb-4 text-shadow-lg leading-tight px-2">
-                            Ride Your Dream
+                            Easy bookings
                             <br />
                             <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent">
-                                Bike Today
+                                smooth journey
                             </span>
                         </h1>
 

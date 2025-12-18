@@ -219,8 +219,8 @@ const Footer = () => {
 
                 {/* Bottom Bar */}
                 <div className="border-t border-gray-700 pt-8">
-                    <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p className="text-gray-400 text-sm text-center md:text-left">
+                    <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+                        <p className="text-gray-400 text-sm text-center">
                             © {currentYear} Rent A Ride. All rights reserved. Made with ❤️ in Chittoor.
                         </p>
                     </div>

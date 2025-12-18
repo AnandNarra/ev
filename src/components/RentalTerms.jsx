@@ -39,6 +39,14 @@ const RentalTerms = () => {
             ]
         },
         {
+            icon: <FaTachometerAlt className="text-4xl text-indigo-600" />,
+            title: 'Kilometer Limit',
+            gradient: 'from-indigo-500 to-indigo-700',
+            items: [
+                'Each rental includes limited kilometers within 24 hours. Additional kilometers beyond the limit will be charged at ₹3 per kilometer.'
+            ]
+        },
+        {
             icon: <FaUserShield className="text-4xl text-purple-600" />,
             title: 'Sub-letting Restriction',
             gradient: 'from-purple-500 to-purple-700',

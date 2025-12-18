@@ -62,19 +62,6 @@ const BikeFleet = () => {
             features: ['Fuel Efficient', 'Reliable', 'Low Maintenance']
         },
         {
-            name: 'Royal Enfield Classic 350',
-            variant: 'Stealth Black',
-            image: '/images/royal-enfield.png',
-            kmRange: 120,
-            price: 999,
-            extraKm: 4,
-            extraHour: 70,
-            category: 'Cruiser',
-            color: 'Stealth Black',
-            features: ['Classic Design', 'Powerful Engine', 'Long Range'],
-            isPremium: true
-        },
-        {
             name: 'Yamaha R15 V3',
             variant: 'Black',
             image: '/images/r15.png',
@@ -85,6 +72,19 @@ const BikeFleet = () => {
             category: 'Sport Bike',
             color: 'Black',
             features: ['155cc Engine', 'Racing Style', 'High Performance'],
+            isPremium: true
+        },
+        {
+            name: 'Royal Enfield Classic 350',
+            variant: 'Stealth Black',
+            image: '/images/royal-enfield.png',
+            kmRange: 120,
+            price: 999,
+            extraKm: 4,
+            extraHour: 70,
+            category: 'Cruiser',
+            color: 'Stealth Black',
+            features: ['Classic Design', 'Powerful Engine', 'Long Range'],
             isPremium: true
         },
         {
